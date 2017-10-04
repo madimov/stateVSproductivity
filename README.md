@@ -6,4 +6,6 @@ Read about the initial project on [Medium](https://medium.com/@MikoDimov/state-a
 
 I am in the process of converting this from a highly personalized project to a smoother, more general-use tool for time management and habit optimization.
 
+An early visualization of a month's worth of state & productivity data:
+
 ![](https://user-images.githubusercontent.com/18381631/31200845-b36977a4-a95c-11e7-9165-38ceb6d5699a.png)
