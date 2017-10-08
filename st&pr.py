@@ -24,28 +24,27 @@ def get_new_data():
 
     return day_dataset
 
-def initialize_database():
-    c.execute('''CREATE TABLE state_prod_RAW (day text, date text, wake_up_time real, 
+def initialize_db():
+    c.execute('''CREATE TABLE IF NOT EXISTS state_prod_RAW (day text, date text, wake_up_time real, 
 	bedtime_that_night real, total_sleep_hours_that_night real,
 	sleep_quality_that_night real, feeling real, exercise real,
 	productivity real)''')
 
-def modify_database():
+def modify_db():
     new_dataset = get_new_data()
     c.execute('INSERT INTO state_prod_RAW VALUES (?,?,?,?,?,?,?,?,?)', new_dataset)
 
 
-def print_database():
+def print_db():
     c.execute ('SELECT * FROM state_prod_RAW ') 
     for row in c.fetchall():
         print(row)
 
-def close_database():
+def close_db():
     # commit changes and close database
     conn.commit()
     conn.close()
 
 def add_new_dataset():
-    modify_database()
-    print_database()
-    close_database()
+    modify_db()
+    print_db()
