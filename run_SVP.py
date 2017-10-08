@@ -8,13 +8,6 @@ def svp():
     
     svp.create_table()
 
-    data_entry_prompt = "Would you like at a new data set? (y/n): "
-    cont = str(input(data_entry_prompt))
-
-    while cont == "y":
-        svp.add_new_dataset()
-        cont = str(input(data_entry_prompt))
+    svp.add_data()
 
     svp.close_db()
-
-    # print("dont forget to call svp.close_db() when you are done!")

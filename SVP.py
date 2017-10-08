@@ -1,4 +1,4 @@
-# sqlite3 commands taken from https://docs.python.org/2/library/sqlite3.html
+# helpful sqlite3 docs, https://docs.python.org/2/library/sqlite3.html
 
 import sqlite3
 
@@ -13,6 +13,14 @@ class State_VS_Productivity():
         s = ''
         return s
 
+    def recheck_yn_input(self, cont, prompt):
+        print('Please answer y or n')
+        cont = str(input(prompt))
+        if cont not in 'yn':
+            restart = self.recheck_yn_input(cont, prompt)
+            return restart
+        return cont
+    
     def get_new_data(self):
 
         day = str(input("Day of the week: "))
@@ -57,6 +65,19 @@ class State_VS_Productivity():
         self.conn.commit()
         self.conn.close()
 
-    def add_new_dataset(self):
-        self.modify_db()
-        self.print_db()
+    def add_data(self):
+        """ adds a day's worth of new data
+        """
+        data_entry_prompt = "Would you like to add new data? (y/n): "
+    
+        cont = str(input(data_entry_prompt))
+        
+        if cont not in 'yn':
+            cont = self.recheck_yn_input(cont, data_entry_prompt)
+        while cont in 'yn':
+            if cont == 'n':
+                return
+            elif cont == 'y':
+                self.modify_db()
+                self.print_db()
+                cont = str(input(data_entry_prompt))
