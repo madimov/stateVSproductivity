@@ -9,3 +9,5 @@ I am in the process of converting this from a highly personalized project to a s
 An early visualization from a month-long experiment tracking state data:
 
 ![](https://user-images.githubusercontent.com/18381631/31200845-b36977a4-a95c-11e7-9165-38ceb6d5699a.png)
+
+To run the current prototype, run the "run_SVP.py" script and follow the instructions.
