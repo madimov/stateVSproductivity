@@ -11,3 +11,7 @@ To run the current prototype, run the "run_SVP.py" script and follow the instruc
 An early visualization from a month-long experiment tracking state data:
 
 ![](https://user-images.githubusercontent.com/18381631/31200845-b36977a4-a95c-11e7-9165-38ceb6d5699a.png)
+
+The variables I tracked included mood, exercise, wake-up time, bedtime, sleep duration, sleep quality, time spent in bed not sleeping, and productivity.
+
+One of the challenges in automating this is accessing data from sleep and productivity apps, some of which don't have API's set up.
